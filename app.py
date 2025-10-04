@@ -1,5 +1,6 @@
 from tkinter import *
 
+# making calculator a class with methods
 class Calculator:
     def __init__(self):
         self.window = Tk()
@@ -22,6 +23,7 @@ class Calculator:
                 col = 0
                 row += 1
 
+    # button-click method
     def click(self, key):
         if key == '=':
             try:
@@ -32,7 +34,7 @@ class Calculator:
             self.display.delete(0, END)
         else:
             self.display.insert(END, key)
-
+    # always keep the app window open and running
     def run(self):
         self.window.mainloop()
 
