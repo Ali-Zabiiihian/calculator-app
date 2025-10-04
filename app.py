@@ -5,10 +5,11 @@ class Calculator:
     def __init__(self):
         self.window = Tk()
         self.window.title("Calculator")
-        self.window.geometry("150x200")
+        self.window.geometry("300x300")
+        self.window.configure(bg="lightblue")
         
         # display
-        self.display = Entry(self.window)
+        self.display = Entry(self.window, font=("Arial", 16))
         self.display.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
         # making buttons
@@ -17,12 +18,12 @@ class Calculator:
         col = 0
 
         for btn in buttons:
-            Button(self.window, text=btn, command=lambda x=btn: self.click(x), bg="lightblue").grid(row=row, column=col)
+            Button(self.window, text=btn, command=lambda x=btn: self.click(x), bg="lightblue", width=5, height=3).grid(row=row, column=col)
             col += 1
             if col > 3:
                 col = 0
                 row += 1
-
+                
     # button-click method
     def click(self, key):
         if key == '=':
